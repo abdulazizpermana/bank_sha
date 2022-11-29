@@ -3,6 +3,8 @@ import 'package:bank_sha/shared/theme.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/buttons.dart';
+
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
 
@@ -129,11 +131,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                               height: 24,
                               child: TextButton(
                                 onPressed: () {
-                                  Navigator.push(
+                                  Navigator.pushNamed(
                                     context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const SignInPage(),
-                                    ),
+                                    '/sign-in',
                                   );
                                 },
                                 style: TextButton.styleFrom(
@@ -185,6 +185,13 @@ class _OnboardingPageState extends State<OnboardingPage> {
                               ),
                             ),
                             const Spacer(),
+                            CustomButtonFilled(
+                                title: 'Continue',
+                                width: 150,
+                                height: 50,
+                                onPressed: () {
+                                  carouselController.nextPage();
+                                }),
                             SizedBox(
                               width: 150,
                               height: 50,

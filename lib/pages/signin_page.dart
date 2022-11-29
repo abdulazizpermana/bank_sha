@@ -1,5 +1,8 @@
 import 'package:bank_sha/shared/theme.dart';
+import 'package:bank_sha/widgets/buttons.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/custom_form.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -42,7 +45,7 @@ class _SignInPageState extends State<SignInPage> {
             height: 30,
           ),
           Container(
-            padding: EdgeInsets.all(22),
+            padding: const EdgeInsets.all(22),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: whiteColor,
@@ -51,57 +54,15 @@ class _SignInPageState extends State<SignInPage> {
               // NOTE EMAIL INPUT
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Email Address',
-                      style: blackTextStyle.copyWith(
-                        fontWeight: medium,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(
-                            14,
-                          ),
-                        ),
-                        contentPadding: const EdgeInsets.all(12),
-                      ),
-                    ),
-                  ],
+                const CustomFormField(
+                  title: 'Email Address',
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Password',
-                      style: blackTextStyle.copyWith(
-                        fontWeight: medium,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    TextFormField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(
-                            14,
-                          ),
-                        ),
-                        contentPadding: const EdgeInsets.all(12),
-                      ),
-                    ),
-                  ],
+                const CustomFormField(
+                  title: 'Password',
+                  obscuretext: true,
                 ),
                 const SizedBox(
                   height: 8,
@@ -116,48 +77,20 @@ class _SignInPageState extends State<SignInPage> {
                 const SizedBox(
                   height: 30,
                 ),
-                SizedBox(
-                  width: double.infinity,
-                  height: 50,
-                  child: TextButton(
-                    onPressed: () {
-                      // carouselController.nextPage();
-                    },
-                    style: TextButton.styleFrom(
-                        backgroundColor: purpleColor,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(56))),
-                    child: Text(
-                      'Sign In',
-                      style: whiteTextStyle.copyWith(
-                        fontSize: 16,
-                        fontWeight: semiBold,
-                      ),
-                    ),
-                  ),
-                ),
+                CustomButtonFilled(
+                  title: 'Sign In',
+                  onPressed: () {},
+                )
               ],
             ),
           ),
           const SizedBox(
             height: 50,
           ),
-          SizedBox(
-            width: double.infinity,
-            height: 24,
-            child: TextButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                padding: EdgeInsets.zero,
-              ),
-              child: Text(
-                'Create New Account',
-                style: greyTextStyle.copyWith(
-                  fontSize: 16,
-                ),
-              ),
-            ),
-          ),
+          CustomTextButton(
+            title: 'Create New Account',
+            onPressed: () {},
+          )
         ],
       ),
     );
