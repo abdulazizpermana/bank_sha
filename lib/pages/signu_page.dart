@@ -30,7 +30,7 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/img_logo_light.png'),
+                image: AssetImage('assets/img_logo_dark.png'),
               ),
             ),
           ),
