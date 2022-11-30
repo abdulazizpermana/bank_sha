@@ -60,14 +60,12 @@ class CustomTextButton extends StatelessWidget {
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
-            backgroundColor: purpleColor,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(56))),
+          padding: EdgeInsets.zero,
+        ),
         child: Text(
           title,
-          style: whiteTextStyle.copyWith(
+          style: greyTextStyle.copyWith(
             fontSize: 16,
-            fontWeight: semiBold,
           ),
         ),
       ),
