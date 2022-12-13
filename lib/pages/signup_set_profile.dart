@@ -103,7 +103,7 @@ class _SignUpSetProfileState extends State<SignUpSetProfile> {
                 CustomButtonFilled(
                   title: 'Continue',
                   onPressed: () {
-                    Navigator.pushNamed(context, 'signup-setktp');
+                    Navigator.pushNamed(context, '/sign-up-setktp');
                   },
                 )
               ],

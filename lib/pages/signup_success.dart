@@ -14,7 +14,7 @@ class SignUpSuccess extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Akun Berhasil\nTerdaftar',
+              'Top Up \nWallet Berhasil',
               style: blackTextStyle.copyWith(
                 fontSize: 20,
                 fontWeight: semiBold,
@@ -25,7 +25,7 @@ class SignUpSuccess extends StatelessWidget {
               height: 26,
             ),
             Text(
-              'Grow your finance start/ntogether with us',
+              'Use the money wisely and\ngrow your finance',
               style: greyTextStyle.copyWith(
                 fontSize: 16,
               ),
@@ -36,8 +36,10 @@ class SignUpSuccess extends StatelessWidget {
             ),
             CustomButtonFilled(
               width: 183,
-              title: 'Get Started',
-              onPressed: () {},
+              title: 'Back to Home',
+              onPressed: () {
+                Navigator.pushNamed(context, '/home-page');
+              },
             ),
           ],
         ),

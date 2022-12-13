@@ -1,3 +1,4 @@
+import 'package:bank_sha/pages/home_page.dart';
 import 'package:bank_sha/pages/onboarding_page.dart';
 import 'package:bank_sha/pages/signin_page.dart';
 import 'package:bank_sha/pages/signup_page.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         '/sign-up-setprofile': (context) => const SignUpSetProfile(),
         '/sign-up-setktp': (context) => const SignUpSetKtp(),
         '/sign-up-success': (context) => const SignUpSuccess(),
+        '/home-page': (context) => const HomePage(),
       },
     );
   }
