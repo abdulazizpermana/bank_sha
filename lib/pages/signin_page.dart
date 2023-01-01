@@ -79,7 +79,13 @@ class _SignInPageState extends State<SignInPage> {
                 ),
                 CustomButtonFilled(
                   title: 'Sign In',
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      '/home',
+                      (route) => false,
+                    );
+                  },
                 )
               ],
             ),
