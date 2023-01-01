@@ -79,7 +79,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 CustomButtonFilled(
                   title: 'Continue',
                   onPressed: () {
-                    Navigator.pushNamed(context, 'sign-up-setprofile');
+                    Navigator.pushNamed(context, '/sign-up-setprofile');
                   },
                 )
               ],

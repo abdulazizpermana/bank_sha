@@ -34,7 +34,7 @@ class _SignUpSetKtpState extends State<SignUpSetKtp> {
             ),
           ),
           Text(
-            'verif Your\nAccount',
+            'verif Your Account',
             style: blackTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semiBold,
@@ -100,7 +100,9 @@ class _SignUpSetKtpState extends State<SignUpSetKtp> {
                 ),
                 CustomButtonFilled(
                   title: 'Continue',
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/sign-up-success');
+                  },
                 )
               ],
             ),
@@ -110,9 +112,9 @@ class _SignUpSetKtpState extends State<SignUpSetKtp> {
           ),
           CustomTextButton(
             title: 'Skip for now',
-            onPressed: () {
-              Navigator.pushNamed(context, '/sign-up-success');
-            },
+            // onPressed: () {
+            //   Navigator.pushNamed(context, '/sign-up-success');
+            // },
           )
         ],
       ),
