@@ -4,8 +4,8 @@ import 'package:bank_sha/pages/signup_page.dart';
 import 'package:bank_sha/pages/signup_set_ktp.dart';
 import 'package:bank_sha/pages/signup_set_profile.dart';
 import 'package:bank_sha/pages/signup_success.dart';
-import 'package:bank_sha/ui/widgets/pages/home_page.dart';
 import 'package:flutter/material.dart';
+import 'pages/home_page.dart';
 import 'pages/splash_page.dart';
 
 void main() {
