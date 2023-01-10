@@ -1,4 +1,6 @@
 import 'package:bank_sha/shared/theme.dart';
+import 'package:bank_sha/widgets/home_latest_item.dart';
+import 'package:bank_sha/widgets/home_services_item.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -80,6 +82,8 @@ class HomePage extends StatelessWidget {
           buildProfile(),
           buildWalletCard(),
           buildLevel(),
+          buildServices(),
+          buildLatesTransaction(),
         ],
       ),
     );
@@ -263,6 +267,121 @@ class HomePage extends StatelessWidget {
               backgroundColor: lightBackgorundColor,
             ),
           )
+        ],
+      ),
+    );
+  }
+
+  Widget buildServices() {
+    return Container(
+      margin: const EdgeInsets.only(
+        top: 30,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Do Something',
+            style: blackTextStyle.copyWith(
+              fontSize: 16,
+              fontWeight: semiBold,
+            ),
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              HomeServicesItem(
+                iconurl: 'assets/ic_topup.png',
+                title: 'Top Up',
+                onTap: () {},
+              ),
+              HomeServicesItem(
+                iconurl: 'assets/ic_send.png',
+                title: 'Send',
+                onTap: () {},
+              ),
+              HomeServicesItem(
+                iconurl: 'assets/ic_withdraw.png',
+                title: 'Withdraw',
+                onTap: () {},
+              ),
+              HomeServicesItem(
+                iconurl: 'assets/ic_more.png',
+                title: 'More',
+                onTap: () {},
+              ),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  buildLatesTransaction() {
+    return Container(
+      margin: const EdgeInsets.only(
+        top: 30,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Latest Transaction',
+            style: blackTextStyle.copyWith(
+              fontSize: 16,
+              fontWeight: semiBold,
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(
+              22,
+            ),
+            margin: const EdgeInsets.only(
+              top: 14,
+            ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: whiteColor,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                HomeLatesItem(
+                  iconUrl: 'assets/ic_transaction_cat1.png',
+                  time: 'Yesterday',
+                  title: 'Top Up',
+                  value: '+ 450.000',
+                ),
+                HomeLatesItem(
+                  iconUrl: 'assets/ic_transaction_cat2.png',
+                  time: 'Cashback',
+                  title: 'Top Up',
+                  value: '+ 22.000',
+                ),
+                HomeLatesItem(
+                  iconUrl: 'assets/ic_transaction_cat3.png',
+                  time: 'Withdraw',
+                  title: 'Top Up',
+                  value: '- 5.000',
+                ),
+                HomeLatesItem(
+                  iconUrl: 'assets/ic_transaction_cat4.png',
+                  time: 'Transfer',
+                  title: 'Top Up',
+                  value: '- 250.000',
+                ),
+                HomeLatesItem(
+                  iconUrl: 'assets/ic_transaction_cat5.png',
+                  time: 'Electric',
+                  title: 'Top Up',
+                  value: '- 450.000.000',
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
