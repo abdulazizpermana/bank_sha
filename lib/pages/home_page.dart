@@ -381,7 +381,7 @@ class HomePage extends StatelessWidget {
                   iconUrl: 'assets/ic_transaction_cat5.png',
                   time: 'Electric',
                   title: 'Top Up',
-                  value: '- 450.000.000',
+                  value: '- 50.000',
                 ),
               ],
             ),
