@@ -1,6 +1,8 @@
 import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/widgets/home_latest_item.dart';
 import 'package:bank_sha/widgets/home_services_item.dart';
+import 'package:bank_sha/widgets/tips_item.dart';
+import 'package:bank_sha/widgets/user_item.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -84,6 +86,8 @@ class HomePage extends StatelessWidget {
           buildLevel(),
           buildServices(),
           buildLatesTransaction(),
+          buildSendAgain(),
+          buildFriendlyTips(),
         ],
       ),
     );
@@ -320,7 +324,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  buildLatesTransaction() {
+  Widget buildLatesTransaction() {
     return Container(
       margin: const EdgeInsets.only(
         top: 30,
@@ -382,6 +386,78 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildSendAgain() {
+    return Container(
+      margin: const EdgeInsets.only(top: 30),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Send Again',
+            style: blackTextStyle.copyWith(
+              fontSize: 16,
+              fontWeight: semiBold,
+            ),
+          ),
+          const SizedBox(
+            height: 14,
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: const [
+                UserItem(
+                  imgUrl: 'assets/img_friend1.png',
+                  username: 'Yuanita',
+                ),
+                UserItem(
+                  imgUrl: 'assets/img_friend2.png',
+                  username: 'Jamal',
+                ),
+                UserItem(
+                  imgUrl: 'assets/img_friend3.png',
+                  username: 'Michel',
+                ),
+                UserItem(
+                  imgUrl: 'assets/img_friend1.png',
+                  username: 'Yuanita',
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget buildFriendlyTips() {
+    return Container(
+      margin: const EdgeInsets.only(
+        top: 30,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Friendly Tips',
+            style: blackTextStyle.copyWith(
+              fontSize: 16,
+              fontWeight: semiBold,
+            ),
+          ),
+          const SizedBox(
+            height: 14,
+          ),
+          const TipsItem(
+            imgUrl: 'assets/img_tips1.png',
+            title: 'Best tips for using a credit card',
+            url: 'https://abdulazizpermana01.my.id/',
+          )
         ],
       ),
     );
