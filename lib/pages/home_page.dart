@@ -439,6 +439,7 @@ class HomePage extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(
         top: 30,
+        bottom: 50,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -453,10 +454,31 @@ class HomePage extends StatelessWidget {
           const SizedBox(
             height: 14,
           ),
-          const TipsItem(
-            imgUrl: 'assets/img_tips1.png',
-            title: 'Best tips for using a credit card',
-            url: 'https://abdulazizpermana01.my.id/',
+          Wrap(
+            spacing: 17,
+            runSpacing: 18,
+            children: const [
+              TipsItem(
+                imgUrl: 'assets/img_tips1.png',
+                title: 'Best tips for using a credit card',
+                url: 'https://abdulazizpermana01.my.id/',
+              ),
+              TipsItem(
+                imgUrl: 'assets/img_tips2.png',
+                title: 'Best tips for using a credit card',
+                url: 'https://abdulazizpermana01.my.id/',
+              ),
+              TipsItem(
+                imgUrl: 'assets/img_tips3.png',
+                title: 'Best tips for using a credit card',
+                url: 'https://abdulazizpermana01.my.id/',
+              ),
+              TipsItem(
+                imgUrl: 'assets/img_tips4.png',
+                title: 'Best tips for using a credit card',
+                url: 'https://abdulazizpermana01.my.id/',
+              ),
+            ],
           )
         ],
       ),
