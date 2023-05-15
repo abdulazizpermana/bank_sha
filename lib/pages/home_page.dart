@@ -1,7 +1,7 @@
 import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/widgets/home_latest_item.dart';
 import 'package:bank_sha/widgets/home_services_item.dart';
-import 'package:bank_sha/widgets/tips_item.dart';
+import 'package:bank_sha/widgets/home_tips_item.dart';
 import 'package:bank_sha/widgets/user_item.dart';
 import 'package:flutter/material.dart';
 
@@ -461,7 +461,7 @@ class HomePage extends StatelessWidget {
               TipsItem(
                 imgUrl: 'assets/img_tips1.png',
                 title: 'Best tips for using a credit card',
-                url: 'https://abdulazizpermana01.my.id/',
+                url: 'https://www.google.com',
               ),
               TipsItem(
                 imgUrl: 'assets/img_tips2.png',
