@@ -1,4 +1,5 @@
 import 'package:bank_sha/pages/onboarding_page.dart';
+import 'package:bank_sha/pages/profile_page.dart';
 import 'package:bank_sha/pages/signin_page.dart';
 import 'package:bank_sha/pages/signup_page.dart';
 import 'package:bank_sha/pages/signup_set_ktp.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         '/sign-up-setktp': (context) => const SignUpSetKtp(),
         '/sign-up-success': (context) => const SignUpSuccess(),
         '/home': (context) => const HomePage(),
+        '/profile': (context) => const ProfilePage(),
       },
     );
   }
