@@ -355,9 +355,9 @@ class HomePage extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               color: whiteColor,
             ),
-            child: Column(
+            child: const Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 HomeLatesItem(
                   iconUrl: 'assets/ic_transaction_cat1.png',
                   time: 'Yesterday',
@@ -412,10 +412,10 @@ class HomePage extends StatelessWidget {
           const SizedBox(
             height: 14,
           ),
-          SingleChildScrollView(
+          const SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: const [
+              children: [
                 UserItem(
                   imgUrl: 'assets/img_friend1.png',
                   username: 'Yuanita',
@@ -459,10 +459,10 @@ class HomePage extends StatelessWidget {
           const SizedBox(
             height: 14,
           ),
-          Wrap(
+          const Wrap(
             spacing: 17,
             runSpacing: 18,
-            children: const [
+            children: [
               TipsItem(
                 imgUrl: 'assets/img_tips1.png',
                 title: 'Best tips for using a credit card',

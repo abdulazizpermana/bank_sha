@@ -110,7 +110,7 @@ class _SignUpSetKtpState extends State<SignUpSetKtp> {
           const SizedBox(
             height: 60,
           ),
-          CustomTextButton(
+          const CustomTextButton(
             title: 'Skip for now',
             // onPressed: () {
             //   Navigator.pushNamed(context, '/sign-up-success');
