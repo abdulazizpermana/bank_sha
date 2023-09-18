@@ -8,13 +8,12 @@ class SignUpSuccess extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: lightBackgorundColor,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Top Up \nWallet Berhasil',
+              'Akun Berhasil\nTerdaftar',
               style: blackTextStyle.copyWith(
                 fontSize: 20,
                 fontWeight: semiBold,
@@ -25,7 +24,7 @@ class SignUpSuccess extends StatelessWidget {
               height: 26,
             ),
             Text(
-              'Use the money wisely and\ngrow your finance',
+              'Grow your finance start \ntogether with us',
               style: greyTextStyle.copyWith(
                 fontSize: 16,
               ),

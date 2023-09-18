@@ -5,6 +5,7 @@ import 'package:bank_sha/pages/signup_page.dart';
 import 'package:bank_sha/pages/signup_set_ktp.dart';
 import 'package:bank_sha/pages/signup_set_profile.dart';
 import 'package:bank_sha/pages/signup_success.dart';
+import 'package:bank_sha/shared/theme.dart';
 import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
 import 'pages/splash_page.dart';
@@ -19,6 +20,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          scaffoldBackgroundColor: lightBackgorundColor,
+          appBarTheme: AppBarTheme(
+            backgroundColor: lightBackgorundColor,
+            elevation: 0,
+            centerTitle: true,
+            iconTheme: IconThemeData(
+              color: blackColor,
+            ),
+            titleTextStyle: blackTextStyle.copyWith(
+              fontSize: 20,
+              fontWeight: semiBold,
+            ),
+          )),
       routes: {
         '/': (context) => const SplashPage(),
         '/onboarding': (context) => const OnboardingPage(),
