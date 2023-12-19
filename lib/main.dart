@@ -8,6 +8,7 @@ import 'package:bank_sha/pages/signup_success.dart';
 import 'package:bank_sha/shared/theme.dart';
 import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
+import 'pages/pin/pin_page.dart';
 import 'pages/splash_page.dart';
 
 void main() {
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
         '/sign-up-success': (context) => const SignUpSuccess(),
         '/home': (context) => const HomePage(),
         '/profile': (context) => const ProfilePage(),
+        '/pin': (context) => const PinPage(),
       },
     );
   }
