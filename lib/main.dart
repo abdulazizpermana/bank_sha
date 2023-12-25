@@ -11,6 +11,7 @@ import 'package:bank_sha/pages/signup_success.dart';
 import 'package:bank_sha/pages/topup/topup_amount_page.dart';
 import 'package:bank_sha/pages/topup/topup_page.dart';
 import 'package:bank_sha/pages/topup/topup_success.dart';
+import 'package:bank_sha/pages/transfer/transfer_page.dart';
 import 'package:bank_sha/shared/theme.dart';
 import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
@@ -58,6 +59,7 @@ class MyApp extends StatelessWidget {
         '/topup': (context) => const TopUpPage(),
         '/topup-amount': (context) => const TopUpAmountPage(),
         '/topup-success': (context) => const TopUpSuccess(),
+        '/transfer': (context) => const TransferPage(),
       },
     );
   }
