@@ -1,10 +1,14 @@
 import 'package:bank_sha/pages/onboarding_page.dart';
-import 'package:bank_sha/pages/profile_page.dart';
+import 'package:bank_sha/pages/profile/profile-edit-success.dart';
+import 'package:bank_sha/pages/profile/profile_edit.dart';
+import 'package:bank_sha/pages/profile/profile_edit_pin.dart';
+import 'package:bank_sha/pages/profile/profile_page.dart';
 import 'package:bank_sha/pages/signin_page.dart';
 import 'package:bank_sha/pages/signup_page.dart';
 import 'package:bank_sha/pages/signup_set_ktp.dart';
 import 'package:bank_sha/pages/signup_set_profile.dart';
 import 'package:bank_sha/pages/signup_success.dart';
+import 'package:bank_sha/pages/topup/topup-page.dart';
 import 'package:bank_sha/shared/theme.dart';
 import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
@@ -46,6 +50,10 @@ class MyApp extends StatelessWidget {
         '/home': (context) => const HomePage(),
         '/profile': (context) => const ProfilePage(),
         '/pin': (context) => const PinPage(),
+        '/profile-edit': (context) => const ProfileEditPage(),
+        '/profile-edit-pin': (context) => const ProfileEditPinPage(),
+        '/profile-edit-success': (context) => const ProfileEditSuccess(),
+        '/topup': (context) => const TopUpPage(),
       },
     );
   }
