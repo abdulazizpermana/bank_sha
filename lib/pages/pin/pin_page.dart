@@ -20,7 +20,7 @@ class _PinPageState extends State<PinPage> {
         },
       );
     }
-    if ( pinController.text == '123123') {
+    if (pinController.text == '123123') {
       Navigator.pop(context, true);
     }
     //! cek log di console
@@ -28,11 +28,13 @@ class _PinPageState extends State<PinPage> {
   }
 
   deletePin() {
-    if (pinController.text.isEmpty) {
-      pinController.text = pinController.text.substring(
-        0,
-        pinController.text.length - 1,
-      );
+    if (pinController.text.isNotEmpty) {
+      setState(() {
+        pinController.text = pinController.text.substring(
+          0,
+          pinController.text.length - 1,
+        );
+      });
     }
     //! cek log di console
     debugPrint(pinController.text);
