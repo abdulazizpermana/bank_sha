@@ -2,7 +2,6 @@ import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/widgets/buttons.dart';
 import 'package:bank_sha/widgets/custom_form.dart';
 import 'package:bank_sha/widgets/package_item.dart';
-import 'package:bank_sha/widgets/transfer_result_item.dart';
 import 'package:flutter/material.dart';
 
 class DataPackagePage extends StatelessWidget {
