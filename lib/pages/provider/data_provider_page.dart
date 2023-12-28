@@ -1,16 +1,16 @@
 import 'package:bank_sha/shared/theme.dart';
-import 'package:bank_sha/widgets/bank_item.dart';
 import 'package:bank_sha/widgets/buttons.dart';
+import 'package:bank_sha/widgets/data_provider_item.dart';
 import 'package:flutter/material.dart';
 
-class TopUpPage extends StatelessWidget {
-  const TopUpPage({super.key});
+class DataProviderPage extends StatelessWidget {
+  const DataProviderPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("TopUp"),
+        title: const Text("Beli Data"),
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(
@@ -21,7 +21,7 @@ class TopUpPage extends StatelessWidget {
             height: 30,
           ),
           Text(
-            'Wallet',
+            'Form Wallet',
             style: blackTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
@@ -53,11 +53,11 @@ class TopUpPage extends StatelessWidget {
                     height: 2,
                   ),
                   Text(
-                    'Abdul Aziz Permana',
+                    'Balance : 5.000.000',
                     style: greyTextStyle.copyWith(
                       fontSize: 12,
                     ),
-                  )
+                  ),
                 ],
               )
             ],
@@ -66,7 +66,7 @@ class TopUpPage extends StatelessWidget {
             height: 40,
           ),
           Text(
-            'Select Bank',
+            'Select Provider',
             style: blackTextStyle.copyWith(
               fontSize: 16,
               fontWeight: semiBold,
@@ -75,30 +75,26 @@ class TopUpPage extends StatelessWidget {
           const SizedBox(
             height: 14,
           ),
-          const BankItem(
-            title: 'BANK BCA',
-            imageUrl: 'assets/img_bca.png',
+          const DataProviderItem(
+            title: 'Telkomsel',
+            imageUrl: 'assets/img_telkom.png',
             isSelected: true,
           ),
-          const BankItem(
-            title: 'BANK BNI',
-            imageUrl: 'assets/img_bni.png',
+          const DataProviderItem(
+            title: 'Indosat',
+            imageUrl: 'assets/img_indosat.png',
           ),
-          const BankItem(
-            title: 'BANK Mandiri',
-            imageUrl: 'assets/img_mandiri.png',
-          ),
-          const BankItem(
-            title: 'BANK OCBC',
-            imageUrl: 'assets/img_ocbc.png',
+          const DataProviderItem(
+            title: 'Singtel',
+            imageUrl: 'assets/img_singtel.png',
           ),
           const SizedBox(
-            height: 12,
+            height: 135,
           ),
           CustomButtonFilled(
             title: 'Continue',
             onPressed: () {
-              Navigator.pushNamed(context, "/topup-amount");
+              Navigator.pushNamed(context, "/data-package");
             },
           ),
           const SizedBox(
