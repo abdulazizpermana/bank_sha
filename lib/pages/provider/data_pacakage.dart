@@ -3,6 +3,7 @@ import 'package:bank_sha/widgets/buttons.dart';
 import 'package:bank_sha/widgets/custom_form.dart';
 import 'package:bank_sha/widgets/package_item.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DataPackagePage extends StatelessWidget {
   const DataPackagePage({super.key});
@@ -83,8 +84,11 @@ class DataPackagePage extends StatelessWidget {
           ),
           CustomButtonFilled(
             title: 'Continue',
-            onPressed: () {
-              Navigator.pushNamed(context, "/data-package");
+            onPressed: () async {
+              if (await Navigator.pushNamed(context, '/pin') == true) {
+                Navigator.pushNamedAndRemoveUntil(
+                    context, '/data-success', (route) => false);
+              }
             },
           ),
           const SizedBox(

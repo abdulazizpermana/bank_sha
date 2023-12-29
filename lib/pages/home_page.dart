@@ -1,3 +1,4 @@
+import 'package:bank_sha/shared/shared_methods.dart';
 import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/widgets/home_latest_item.dart';
 import 'package:bank_sha/widgets/home_services_item.dart';
@@ -211,7 +212,7 @@ class HomePage extends StatelessWidget {
             style: whiteTextStyle,
           ),
           Text(
-            'Rp, 1.000.000',
+            formatCurrency(550000),
             style: whiteTextStyle.copyWith(
               fontSize: 24,
               fontWeight: semiBold,
@@ -246,13 +247,13 @@ class HomePage extends StatelessWidget {
               ),
               const Spacer(),
               Text(
-                '55%',
+                '55% ',
                 style: greenTextStyle.copyWith(
                   fontWeight: semiBold,
                 ),
               ),
               Text(
-                'of Rp. 20.000',
+                'of ${formatCurrency(23000)}',
                 style: blackTextStyle.copyWith(
                   fontWeight: semiBold,
                 ),
@@ -363,38 +364,38 @@ class HomePage extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               color: whiteColor,
             ),
-            child: const Column(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 HomeLatesItem(
                   iconUrl: 'assets/ic_transaction_cat1.png',
                   time: 'Yesterday',
                   title: 'Top Up',
-                  value: '+ 450.000',
+                  value: '+ ${formatCurrency(450000, symbol: '')}',
                 ),
                 HomeLatesItem(
                   iconUrl: 'assets/ic_transaction_cat2.png',
                   time: 'Cashback',
                   title: 'Top Up',
-                  value: '+ 22.000',
+                  value: '+ ${formatCurrency(22000, symbol: '')}',
                 ),
                 HomeLatesItem(
                   iconUrl: 'assets/ic_transaction_cat3.png',
                   time: 'Withdraw',
                   title: 'Top Up',
-                  value: '- 5.000',
+                  value: '- ${formatCurrency(50000, symbol: '')}',
                 ),
                 HomeLatesItem(
                   iconUrl: 'assets/ic_transaction_cat4.png',
                   time: 'Transfer',
                   title: 'Top Up',
-                  value: '- 250.000',
+                  value: '+ ${formatCurrency(250000, symbol: '')}',
                 ),
                 HomeLatesItem(
                   iconUrl: 'assets/ic_transaction_cat5.png',
                   time: 'Electric',
                   title: 'Top Up',
-                  value: '- 50.000',
+                  value: '- ${formatCurrency(87000, symbol: '')}',
                 ),
               ],
             ),

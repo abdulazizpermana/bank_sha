@@ -1,3 +1,4 @@
+import "package:bank_sha/shared/shared_methods.dart";
 import "package:bank_sha/shared/theme.dart";
 import "package:bank_sha/widgets/buttons.dart";
 import "package:flutter/material.dart";
@@ -20,11 +21,15 @@ class _PinPageState extends State<PinPage> {
         },
       );
     }
-    if (pinController.text == '123123') {
-      Navigator.pop(context, true);
+
+    if (pinController.text.length == 6) {
+      if (pinController.text == '123123') {
+        Navigator.pop(context, true);
+      } else {
+        showCustomSnackbar(
+            context, 'Pin yang anda masukan salah. Silahkan coba lagi!');
+      }
     }
-    //! cek log di console
-    debugPrint(pinController.text);
   }
 
   deletePin() {
