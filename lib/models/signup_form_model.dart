@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class SignUpFormModel {
   String? name;
   String? email;

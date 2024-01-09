@@ -87,7 +87,10 @@ class DataPackagePage extends StatelessWidget {
             onPressed: () async {
               if (await Navigator.pushNamed(context, '/pin') == true) {
                 Navigator.pushNamedAndRemoveUntil(
-                    context, '/data-success', (route) => false);
+                  context,
+                  '/data-success',
+                  (route) => false,
+                );
               }
             },
           ),

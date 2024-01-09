@@ -1,3 +1,4 @@
+import 'package:bank_sha/shared/shared_methods.dart';
 import 'package:flutter/material.dart';
 
 import '../shared/theme.dart';
@@ -12,6 +13,19 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  final nameController = TextEditingController(text: '');
+  final emailController = TextEditingController(text: '');
+  final passwordController = TextEditingController(text: '');
+
+  bool validate() {
+    if (nameController.text.isEmpty ||
+        emailController.text.isEmpty ||
+        passwordController.text.isEmpty) {
+      return false;
+    }
+    return true;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,21 +67,24 @@ class _SignUpPageState extends State<SignUpPage> {
               // NOTE EMAIL INPUT
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const CustomFormField(
+                CustomFormField(
                   title: 'Full Name',
+                  controller: nameController,
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                const CustomFormField(
+                CustomFormField(
                   title: 'Email Address',
+                  controller: emailController,
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                const CustomFormField(
+                CustomFormField(
                   title: 'Password',
                   obscuretext: true,
+                  controller: passwordController,
                 ),
                 const SizedBox(
                   height: 8,
@@ -78,7 +95,11 @@ class _SignUpPageState extends State<SignUpPage> {
                 CustomButtonFilled(
                   title: 'Continue',
                   onPressed: () {
-                    Navigator.pushNamed(context, '/sign-up-setprofile');
+                    if (validate()) {
+                      Navigator.pushNamed(context, '/sign-up-setprofile');
+                    } else {
+                      showCustomSnackbar(context, 'Semua field harus diisi!');
+                    }
                   },
                 )
               ],
@@ -92,7 +113,10 @@ class _SignUpPageState extends State<SignUpPage> {
             onPressed: () {
               Navigator.pushNamed(context, '/sign-in');
             },
-          )
+          ),
+          const SizedBox(
+            height: 30,
+          ),
         ],
       ),
     );
