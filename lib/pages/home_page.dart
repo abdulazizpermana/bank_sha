@@ -469,6 +469,7 @@ class HomePage extends StatelessWidget {
             height: 14,
           ),
           const Wrap(
+            alignment: WrapAlignment.center,
             spacing: 17,
             runSpacing: 18,
             children: [
@@ -493,7 +494,7 @@ class HomePage extends StatelessWidget {
                 url: 'https://abdulazizpermana01.my.id/',
               ),
             ],
-          )
+          ),
         ],
       ),
     );
@@ -531,6 +532,7 @@ class MoreDialog extends StatelessWidget {
               height: 13,
             ),
             Wrap(
+              alignment: WrapAlignment.center,
               spacing: 29,
               runSpacing: 25,
               children: [

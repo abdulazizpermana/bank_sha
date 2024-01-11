@@ -1,18 +1,33 @@
+import 'dart:io';
+
+import 'package:bank_sha/models/signup_form_model.dart';
+import 'package:bank_sha/shared/shared_methods.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import '../shared/theme.dart';
 import '../widgets/buttons.dart';
 import '../widgets/custom_form.dart';
 
 class SignUpSetProfile extends StatefulWidget {
-  const SignUpSetProfile({super.key});
+  final SignUpFormModel data;
+
+  const SignUpSetProfile({
+    required this.data,
+    super.key,
+  });
 
   @override
   State<SignUpSetProfile> createState() => _SignUpSetProfileState();
 }
 
 class _SignUpSetProfileState extends State<SignUpSetProfile> {
+  final pinController = TextEditingController(text: '');
+  XFile? selectedImage;
+
   @override
   Widget build(BuildContext context) {
+    print(widget.data.toJson());
+
     return Scaffold(
       body: ListView(
         padding: const EdgeInsets.symmetric(
@@ -52,31 +67,39 @@ class _SignUpSetProfileState extends State<SignUpSetProfile> {
               // NOTE EMAIL INPUT
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // Container(
-                //   width: 120,
-                //   height: 120,
-                //   decoration: BoxDecoration(
-                //     shape: BoxShape.circle,
-                //     color: lightBackgorundColor,
-                //   ),
-                //   child: Center(
-                //     child: Image.asset(
-                //       'assets/ic_upload.png',
-                //       width: 32,
-                //     ),
-                //   ),
-                // ),
-                Container(
-                  width: 120,
-                  height: 120,
-                  decoration: const BoxDecoration(
+                GestureDetector(
+                  onTap: () async {
+                    final image = await selectImage();
+                    setState(() {
+                      selectedImage = image;
+                    });
+                  },
+                  child: Container(
+                    width: 120,
+                    height: 120,
+                    decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage(
-                          'assets/img_profile.png',
-                        ),
-                      )),
+                      color: lightBackgorundColor,
+                      image: selectedImage == null
+                          ? null
+                          : DecorationImage(
+                              fit: BoxFit.cover,
+                              image: FileImage(
+                                File(
+                                  selectedImage!.path,
+                                ),
+                              ),
+                            ),
+                    ),
+                    child: selectedImage != null
+                        ? null
+                        : Center(
+                            child: Image.asset(
+                              'assets/ic_upload.png',
+                              width: 32,
+                            ),
+                          ),
+                  ),
                 ),
                 const SizedBox(
                   height: 16,
@@ -91,9 +114,10 @@ class _SignUpSetProfileState extends State<SignUpSetProfile> {
                 const SizedBox(
                   height: 30,
                 ),
-                const CustomFormField(
+                CustomFormField(
                   obscuretext: true,
                   title: 'set PIN (6 Digit Number)',
+                  controller: pinController,
                 ),
                 const SizedBox(
                   height: 30,
